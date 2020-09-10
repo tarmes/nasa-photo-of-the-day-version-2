@@ -25,10 +25,10 @@ function App() {
     <div className="App">
       <h1>NASA PHOTO OF THE DAY</h1>
       {
-        <Info />
+        <Info date={photoData.date} title={photoData.title}/>
       }
       {
-        <Content />
+        <Content url={photoData.url} explanation={photoData.explanation} copyright={photoData.copyright}/>
       }
     </div>
   );
