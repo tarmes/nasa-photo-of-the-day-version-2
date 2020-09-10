@@ -4,11 +4,25 @@ import axios from 'axios';
 import { API_KEY, BASE_URL } from './constants'
 import Content from './components/Content'
 import Info from './components/Info'
-import styled, { keyframes } from 'styled-components'
+// import styled, { keyframes } from 'styled-components'
 
-const StyledApp = styled.div`
-  background-color: lightgrey;
-`
+
+// const kfTB = keyframes`
+//   from {
+//     margin-top: -100%;
+//   }
+//   to {
+//     margin-top: 0;
+//   }
+// `
+
+// const StyledApp = styled.div`
+
+//   h1 {
+//     animation: ${kfTB} 2s ease;
+//   }
+
+// `
 
 
 function App() {
@@ -28,7 +42,7 @@ function App() {
   console.log(photoData);
 
   return (
-    <StyledApp className="App">
+    <div className="App">
       <h1>NASA PHOTO OF THE DAY</h1>
       {
         <Info date={photoData.date} title={photoData.title}/>
@@ -36,7 +50,7 @@ function App() {
       {
         <Content url={photoData.url} explanation={photoData.explanation} copyright={photoData.copyright}/>
       }
-    </StyledApp>
+    </div>
   );
 }
 

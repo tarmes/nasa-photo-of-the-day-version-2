@@ -1,16 +1,40 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
+const kfLR = keyframes`
+    from {
+        margin-left: -100%;
+    }
+    to {
+        margin-left: 0;
+    }
+`
+const kfRL = keyframes`
+    from {
+        margin-left: 100%;
+    }
+    to {
+        margin-left: 0
+    }
+`
+
 const StyledInfo = styled.div`
-    border: 5px solid black;
+
+    h3 {
+        color: ${pr => pr.theme.funColor};
+        animation: ${kfLR} 2s ease;
+    }
+
+    h2 {
+        animation: ${kfRL} 2s ease;
+    }
 `
 
 export default function Info({ date, title }) {
     return (
-        <StyledInfo className='info-container'>
-            <h4>this is the info container</h4> 
-            <h5>Date: {date}</h5>
-            <h3>{title}</h3>
+        <StyledInfo className='info-container'> 
+            <h3>Date: {date}</h3>
+            <h2>{title}</h2>
         </StyledInfo>
     )
 }

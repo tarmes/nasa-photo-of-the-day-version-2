@@ -3,7 +3,9 @@ import Photo from './Photo'
 import styled, { keyframes } from 'styled-components'
 
 const StyledContent = styled.div`
-    border: 5px solid blue;
+    h3 {
+        color: ${pr => pr.theme.funColor};
+    }
 `
 
 export default function Content({url, explanation, copyright}) {
@@ -12,7 +14,6 @@ export default function Content({url, explanation, copyright}) {
           {
               <Photo photoLocation={url}/>
           }
-          <h3>This is the content container.</h3>
           <h3>{explanation}</h3>
           <h5>{copyright}</h5>
       </StyledContent>
